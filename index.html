@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirajul.com</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Custom fonts for Bengali text */
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+        
+        /* Header styles */
+        .top-navbar {
+            background-color: #222;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            max-height: 40px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .nav-link {
+            color: white;
+            margin: 0 10px;
+        }
+        
+        .secondary-nav {
+            background-color: #222;
+            padding: 10px 0;
+            border-top: 1px solid #333;
+        }
+        
+        .secondary-nav .nav-link {
+            color: white;
+            font-size: 14px;
+            padding: 5px 15px;
+        }
+        
+        /* Side navbar specific styles */
+    .side-navbar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1050;
+        top: 0;
+        left: 0;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 20px;
+    }
+    
+    .side-navbar a {
+        padding: 8px 32px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #000;
+        display: block;
+        transition: 0.3s;
+        font-family: 'Hind Siliguri', sans-serif;
+    }
+    
+    .side-navbar a:hover {
+        color: #666;
+    }
+    
+    .side-navbar .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 24px;
+        padding: 0;
+        color: #000;
+    }
+    
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        padding: 8px 32px;
+        margin-bottom: 5px;
+    }
+    
+    /* Overlay when menu is open */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 1040;
+    }
+        
+        /* Content styles */
+        .tag-section {
+            margin: 20px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 5px 15px;
+            margin-right: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .tag-primary {
+            background-color: #fff;
+            color: #ff5722;
+            border: 1px solid #ff5722;
+        }
+        
+        .tag-secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .news-card {
+            margin-bottom: 30px;
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .news-title {
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        
+        .featured-news {
+            position: relative;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .featured-news img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            object-fit: cover;
+        }
+        
+        .featured-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        .category-label {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .sidebar-title {
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-tab {
+            background: none;
+            border: none;
+            padding: 5px 15px;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .sidebar-tab.active {
+            color: #ff5722;
+        }
+        
+        .sidebar-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ff5722;
+        }
+        
+        .sidebar-news {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        
+        .sidebar-news img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        
+        .sidebar-news-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .ad-section {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .ad-section h3 {
+            color: #ff5722;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .ad-section .email {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 15px;
+            z-index: 1000;
+        }
+        
+        .cookie-banner button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        
+        .language-toggle {
+            color: #ff5722;
+            font-weight: 600;
+        }
+        
+        .icon-button {
+            color: white;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        @media (max-width: 768px) {
+            .carousel-inner .carousel-item > div {
+                display: none;
+            }
+            .carousel-inner .carousel-item > div:first-child {
+                display: block;
+            }
+        }
+        
+        .carousel-inner .carousel-item.active,
+        .carousel-inner .carousel-item-next,
+        .carousel-inner .carousel-item-prev {
+            display: flex;
+        }
+        
+        /* display 3 */
+        @media (min-width: 768px) {
+            
+            .carousel-inner .carousel-item-right.active,
+            .carousel-inner .carousel-item-next {
+              transform: translateX(33.333%);
+            }
+            
+            .carousel-inner .carousel-item-left.active, 
+            .carousel-inner .carousel-item-prev {
+              transform: translateX(-33.333%);
+            }
+        }
+        
+        .carousel-inner .carousel-item-right,
+        .carousel-inner .carousel-item-left{ 
+          transform: translateX(0);
+        }
+        
+        
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .secondary-nav .nav-link {
+                padding: 5px 8px;
+                font-size: 12px;
+            }
+            
+            .featured-news {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+<!-- Side Navigation -->
+<div id="mySidenav" class="side-navbar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="section-title">সেকশন</div>
+    <a href="#">হোম</a>
+    <a href="#">পরিচয়</a>
+    <a href="#">সর্বশেষ</a>
+    <a href="#">ফটোগ্রাফি</a>
+    <a href="#">ভ্রমণ</a>
+    <a href="#">পরিসেবা</a>
+    <a href="#">যোগাযোগ</a>
+    <a href="#">আরও বিভাগ</a>
+    <a href="#">রাজনীতি</a>
+    <a href="#">গবেষণা</a>
+    <a href="#">মতামত</a>
+    <a href="#">প্রকৃতি ও সুরক্ষা</a>
+    <a href="#">মানবিক সমৃদ্ধি ও সম্পর্ক</a>
+    <a href="#">শিক্ষা</a>
+    <a href="#">পেশা</a>
+    <a href="#">খবর ও সাম্প্রতিক</a>
+</div>
+    
+    <!-- Top Navigation Bar -->
+    <nav class="navbar  top-navbar">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button" onclick="openNav()">
+                <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+            
+            <div class="navbar-brand mx-auto">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-D4NdwlmmavBmcizPL3DzQojmo4HTqx.png" alt="Sirajul.com" class="logo">
+            </div>
+            
+            <div class="d-flex align-items-center">
+                <span class="language-toggle me-2">EN</span>
+                <a href="#" class="icon-button"><i class="fas fa-sun"></i></a>
+                <a href="#" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-button"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon-button"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <div class="container">
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="#" class="nav-link">পরিচয়</a>
+                <a href="#" class="nav-link">ভ্রমণ</a>
+                <a href="#" class="nav-link">ফটোগ্রাফি</a>
+                <a href="#" class="nav-link">প্রবন্ধ</a>
+                <a href="#" class="nav-link">সহায়তা</a>
+                <a href="#" class="nav-link">পরিসেবা</a>
+                <a href="#" class="nav-link">যোগাযোগ</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Tags Section -->
+        <div class="tag-section d-flex justify-content-center flex-wrap">
+            <span class="tag tag-primary">আলোচিত বিষয়</span>
+            <span class="tag tag-secondary">আন্তর্জাতিক সম্পর্ক</span>
+            <span class="tag tag-secondary">সামাজিক বিশ্লেষণ</span>
+        </div>
+        
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- First News Item -->
+                    <div class="col-md-4">
+                        <div class="news-card">
+                            <span class="category-label">রাজনীতি</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h3 class="news-title">প্রতিক্রিয়া নিভৃত অসীম যুদ্ধ চক্র</h3>
+                        </div>
+                        
+                        <div class="news-card">
+                            <span class="category-label">রাজনীতি</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h3 class="news-title">আমেরিকার যাত্র - ২: সেট মার্কিন কেন...?</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Featured News -->
+                    <div class="col-md-8">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom News Section -->
+                
+            </div>
+            
+            <!-- Right Sidebar -->
+            <div class="col-lg-4">
+                <!-- Ad Section -->
+                <div class="ad-section">
+                    <img src="/placeholder.svg?height=150&width=200" alt="Mobile with apps">
+                    <h3>ADVERTISE WITH US</h3>
+                    <div class="email">care@sirajul.com</div>
+                </div>
+                
+                <!-- Sidebar News -->
+                <div class="sidebar-content">
+                    <div class="d-flex justify-content-between sidebar-title">
+                        <button class="sidebar-tab active" onclick="changeTab('nirbachito')">নির্বাচিত</button>
+                        <button class="sidebar-tab" onclick="changeTab('pothito')">পঠিত</button>
+                    </div>
+                    
+                    <div id="nirbachito-content">
+                        <div class="sidebar-news">
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <div class="sidebar-news-title">সব ক্রোধ ও সরকার পতনের মনোবিদ্যা</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">পাকিস্তানে মুজিব ভিত্তি</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Map">
+                            <div class="sidebar-news-title">আমেরিকার যাত্র - ১: ইরান-পাকিস্তান-ভারত (IPI) গ্যাস পাইপলাইন</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">বাংলাদেশে ৭৫</div>
+                        </div>
+                    </div>
+                    
+                    <div id="pothito-content" style="display: none;">
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">বাংলাদেশে ৭৫</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Map">
+                            <div class="sidebar-news-title">আমেরিকার যাত্র - ১: ইরান-পাকিস্তান-ভারত (IPI) গ্যাস পাইপলাইন</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">পাকিস্তানে মুজিব ভিত্তি</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Map">
+                            <div class="sidebar-news-title">সব ক্রোধ ও সরকার পতনের মনোবিদ্যা</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+    <div class="container text-center my-3" style="background-color: #000;">
+        <h2 class="font-weight-light" style="color: white;">ফটোগ্রাফি</h2>
+        <div class="row mx-auto my-auto">
+            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100">
+                    <!-- First Slide -->
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <img class="img-fluid" src="https://i.ibb.co/pj82055X/img1.png">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <img class="img-fluid" src="https://i.ibb.co/pj82055X/img1.png">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <img class="img-fluid" src="https://i.ibb.co/pj82055X/img1.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Slide -->
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <img class="img-fluid" src="https://i.ibb.co/pj82055X/img1.png">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <img class="img-fluid" src="https://i.ibb.co/pj82055X/img1.png">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <img class="img-fluid" src="http://placehold.it/380?text=6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <h5 class="mt-2">Advances one slide at a time</h5>
+    </div>
+    <div class="container mt-4">
+        
+        
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="featured-news">
+                            <span class="category-label">ভ্রমণ ও অ্যাডভেঞ্চার</span>
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <h2 class="featured-title">নারী মুক্তি - আলোর দিকে নাকি কালোর দিকে?</h2>
+                            <p>লক্ষ্য সুন্দরবন ভ্রমণ। আমার সাথে এক ফরাসী ফটোগ্রাফার ও তার একজন তরুণী সহকারী। আধুনিক বিশ্বায়নে ফরাসীদের একটি ভাল দিক হলো...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom News Section -->
+                
+            </div>
+    <!-- Cookie Banner -->
+    <div class="cookie-banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    আমরা আপনাকে সেবা উন্নত করতে কুকি ব্যবহার করি। আমাদের কুকি নীতির পর্যালোচনা জানার জন্য অনুগ্রহ করে <a href="#" style="color: #ff5722;">এখানে</a> ক্লিক করুন। কুকি ব্যবহারের জন্য আপনি সম্মত হলে, 'সম্মতি দিন' বাটনে ক্লিক করুন।
+                </div>
+                <div class="col-md-3 text-end">
+                    <button class="btn">সম্মতি দিন</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cookie banner close functionality
+        document.querySelector('.cookie-banner button').addEventListener('click', function() {
+            document.querySelector('.cookie-banner').style.display = 'none';
+        });
+        
+        // Side navbar functionality
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        
+        // Sidebar tabs functionality
+        function changeTab(tabId) {
+            // Hide all content
+            document.getElementById('nirbachito-content').style.display = 'none';
+            document.getElementById('pothito-content').style.display = 'none';
+            
+            // Show selected content
+            document.getElementById(tabId + '-content').style.display = 'block';
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.sidebar-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            if (tabId === 'nirbachito') {
+                tabs[0].classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+            }
+        }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "280px";
+            document.getElementById("overlay").style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("overlay").style.display = "none";
+            document.body.style.overflow = ""; // Restore scrolling
+        }
+        $('#recipeCarousel').carousel({
+            interval: 10000
+          })
+          
+          $('.carousel .carousel-item').each(function(){
+              var minPerSlide = 3;
+              var next = $(this).next();
+              if (!next.length) {
+              next = $(this).siblings(':first');
+              }
+              next.children(':first-child').clone().appendTo($(this));
+              
+              for (var i=0;i<minPerSlide;i++) {
+                  next=next.next();
+                  if (!next.length) {
+                      next = $(this).siblings(':first');
+                    }
+                  
+                  next.children(':first-child').clone().appendTo($(this));
+                }
+          });
+          
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
