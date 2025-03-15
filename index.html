@@ -8,316 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- Custom CSS -->
-    <style>
-        /* Custom fonts for Bengali text */
-        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Hind Siliguri', sans-serif;
-        }
-        
-        /* Header styles */
-        .top-navbar {
-            background-color: #222;
-            padding: 10px 0;
-        }
-        
-        .logo {
-            max-height: 40px;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .nav-link {
-            color: white;
-            margin: 0 10px;
-        }
-        
-        .secondary-nav {
-            background-color: #222;
-            padding: 10px 0;
-            border-top: 1px solid #333;
-        }
-        
-        .secondary-nav .nav-link {
-            color: white;
-            font-size: 14px;
-            padding: 5px 15px;
-        }
-        
-        /* Side navbar specific styles */
-    .side-navbar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1050;
-        top: 0;
-        left: 0;
-        background-color: white;
-        overflow-x: hidden;
-        transition: 0.3s;
-        padding-top: 20px;
-    }
-    
-    .side-navbar a {
-        padding: 8px 32px;
-        text-decoration: none;
-        font-size: 16px;
-        color: #000;
-        display: block;
-        transition: 0.3s;
-        font-family: 'Hind Siliguri', sans-serif;
-    }
-    
-    .side-navbar a:hover {
-        color: #666;
-    }
-    
-    .side-navbar .closebtn {
-        position: absolute;
-        top: 10px;
-        right: 25px;
-        font-size: 24px;
-        padding: 0;
-        color: #000;
-    }
-    
-    .section-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #000;
-        padding: 8px 32px;
-        margin-bottom: 5px;
-    }
-    
-    /* Overlay when menu is open */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
-        z-index: 1040;
-    }
-        
-        /* Content styles */
-        .tag-section {
-            margin: 20px 0;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-        
-        .tag {
-            display: inline-block;
-            padding: 5px 15px;
-            margin-right: 10px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        
-        .tag-primary {
-            background-color: #fff;
-            color: #ff5722;
-            border: 1px solid #ff5722;
-        }
-        
-        .tag-secondary {
-            background-color: #f5f5f5;
-            color: #333;
-            border: 1px solid #ddd;
-        }
-        
-        .news-card {
-            margin-bottom: 30px;
-        }
-        
-        .news-card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-        
-        .news-title {
-            font-weight: 600;
-            margin-top: 10px;
-            font-size: 18px;
-        }
-        
-        .featured-news {
-            position: relative;
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .featured-news img {
-            width: 100%;
-            height: auto;
-            max-height: 350px;
-            object-fit: cover;
-        }
-        
-        .featured-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin: 15px 0;
-        }
-        
-        .category-label {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 5px;
-            display: block;
-        }
-        
-        .sidebar-title {
-            font-weight: 600;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 15px;
-        }
-        
-        .sidebar-tab {
-            background: none;
-            border: none;
-            padding: 5px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            position: relative;
-        }
-        
-        .sidebar-tab.active {
-            color: #ff5722;
-        }
-        
-        .sidebar-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #ff5722;
-        }
-        
-        .sidebar-news {
-            display: flex;
-            margin-bottom: 15px;
-            align-items: center;
-        }
-        
-        .sidebar-news img {
-            width: 80px;
-            height: 60px;
-            object-fit: cover;
-            margin-right: 10px;
-        }
-        
-        .sidebar-news-title {
-            font-size: 14px;
-            font-weight: 500;
-        }
-        
-        .ad-section {
-            background-color: #222;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .ad-section h3 {
-            color: #ff5722;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .ad-section .email {
-            color: white;
-            font-size: 18px;
-            font-weight: 500;
-        }
-        
-        .cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 15px;
-            z-index: 1000;
-        }
-        
-        .cookie-banner button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-        }
-        
-        .language-toggle {
-            color: #ff5722;
-            font-weight: 600;
-        }
-        
-        .icon-button {
-            color: white;
-            font-size: 18px;
-            margin-left: 15px;
-        }
-        @media (max-width: 768px) {
-            .carousel-inner .carousel-item > div {
-                display: none;
-            }
-            .carousel-inner .carousel-item > div:first-child {
-                display: block;
-            }
-        }
-        
-        .carousel-inner .carousel-item.active,
-        .carousel-inner .carousel-item-next,
-        .carousel-inner .carousel-item-prev {
-            display: flex;
-        }
-        
-        /* display 3 */
-        @media (min-width: 768px) {
-            
-            .carousel-inner .carousel-item-right.active,
-            .carousel-inner .carousel-item-next {
-              transform: translateX(33.333%);
-            }
-            
-            .carousel-inner .carousel-item-left.active, 
-            .carousel-inner .carousel-item-prev {
-              transform: translateX(-33.333%);
-            }
-        }
-        
-        .carousel-inner .carousel-item-right,
-        .carousel-inner .carousel-item-left{ 
-          transform: translateX(0);
-        }
-        
-        
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .secondary-nav .nav-link {
-                padding: 5px 8px;
-                font-size: 12px;
-            }
-            
-            .featured-news {
-                margin-top: 20px;
-            }
-        }
-    </style>
+
 </head>
 <body>
     <!-- Overlay -->
@@ -616,6 +310,136 @@
                 <!-- Bottom News Section -->
                 
             </div>
+            <div class="container mt-4">
+                <!-- Header Row -->
+                <div class="row mb-4">
+                    <!-- Latest News Header -->
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center">
+                            <h5 class="mb-0">সর্বশেষ</h5>
+                            <div class="square-icon"></div>
+                        </div>
+                    </div>
+                    <!-- Special News Header -->
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center">
+                            <h5 class="mb-0">বিশেষ</h5>
+                            <div class="square-icon"></div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Main Content Row -->
+                <div class="row">
+                    <!-- Left Column - Articles -->
+                    <div class="col-md-8">
+                        <!-- First Article -->
+                        <article class="mb-4 d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="category-label mb-1">প্রথম ও আন্তর্জাতিক</div>
+                                <a href="#" class="article-link">
+                                    <h6 class="mb-2">শেখ মুজিব ও নয়াচীন</h6>
+                                </a>
+                                <h2 class="mb-3">বিদেশ ভ্রমণের মনভাব</h2>
+                                <p class="text-muted">
+                                    বিদেশ ভ্রমণের অভিজ্ঞতা কেবল বিনোদন নয়, এটি আমাদের মনের অবদমিত প্রেরণা প্রকাশের এক মাধ্যম ও হতে পারে। শেখ মুজিবের টানা পর্যবেক্ষণের আলোকে, এই লেখায় বিশ্লেষণ করা হয়েছে কীভাবে মানুষ সামাজিক ব্যবার বাইরে...
+                                </p>
+                            </div>
+                            <div class="ms-3">
+                                <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="News Image" class="img-fluid rounded" style="width: 1000px; height: auto;">
+                            </div>
+                        </article>
+        
+                        <!-- Second Article -->
+                        <article class="mb-4 d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="category-label mb-1">প্রথম ও আন্তর্জাতিক</div>
+                                <a href="#" class="article-link">
+                                    <h6 class="mb-2">শেখ মুজিব ও নয়াচীন</h6>
+                                </a>
+                                <h2 class="mb-3">বিদেশ ভ্রমণের মনভাব</h2>
+                                <p class="text-muted">
+                                    বিদেশ ভ্রমণের অভিজ্ঞতা কেবল বিনোদন নয়, এটি আমাদের মনের অবদমিত প্রেরণা প্রকাশের এক মাধ্যম ও হতে পারে। শেখ মুজিবের টানা পর্যবেক্ষণের আলোকে, এই লেখায় বিশ্লেষণ করা হয়েছে কীভাবে মানুষ সামাজিক ব্যবার বাইরে...
+                                </p>
+                            </div>
+                            <div class="ms-3">
+                                <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="News Image" class="img-fluid rounded" style="width: 1000px; height: auto;">
+                            </div>
+                        </article>
+        
+                        <!-- Third Article -->
+                        <article class="mb-4 d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="category-label mb-1">প্রথম ও আন্তর্জাতিক</div>
+                                <a href="#" class="article-link">
+                                    <h6 class="mb-2">শেখ মুজিব ও নয়াচীন</h6>
+                                </a>
+                                <h2 class="mb-3">বিদেশ ভ্রমণের মনভাব</h2>
+                                <p class="text-muted">
+                                    বিদেশ ভ্রমণের অভিজ্ঞতা কেবল বিনোদন নয়, এটি আমাদের মনের অবদমিত প্রেরণা প্রকাশের এক মাধ্যম ও হতে পারে। শেখ মুজিবের টানা পর্যবেক্ষণের আলোকে, এই লেখায় বিশ্লেষণ করা হয়েছে কীভাবে মানুষ সামাজিক ব্যবার বাইরে...
+                                </p>
+                            </div>
+                            <div class="ms-3">
+                                <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="News Image" class="img-fluid rounded" style="width: 1000px; height: auto;">
+                            </div>
+                        </article>
+                    </div>
+        
+                    <!-- Right Column - Special News -->
+                    <div class="col-md-4">
+                        <!-- Special News Items -->
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action border-0 mb-3">
+                                <div class="d-flex">
+                                    <img src="https://i.ibb.co.com/pj82055X/img1.png" class="thumbnail rounded me-3" style="width: 150px; height: auto;" alt="News thumbnail">
+                                    <div>
+                                        <div class="category-label">রাজনীতি</div>
+                                        <h6 class="mb-0">ভারতের যুদ্ধ প্রস্তুতি – একটি গুরুত্ব কেস সিনারিও -১</h6>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action border-0 mb-3">
+                                <div class="d-flex">
+                                    <img src="https://i.ibb.co.com/pj82055X/img1.png" class="thumbnail rounded me-3" style="width: 150px; height: auto;" alt="News thumbnail">
+                                    <div>
+                                        <div class="category-label">রাজনীতি</div>
+                                        <h6 class="mb-0">ভারতের যুদ্ধ প্রস্তুতি – একটি গুরুত্ব কেস সিনারিও -২</h6>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action border-0 mb-3">
+                                <div class="d-flex">
+                                    <img src="https://i.ibb.co.com/pj82055X/img1.png" class="thumbnail rounded me-3" style="width: 150px; height: auto;" alt="News thumbnail">
+                                    <div>
+                                        <div class="category-label">রাজনীতি</div>
+                                        <h6 class="mb-0">ভারতের যুদ্ধ প্রস্তুতি – একটি গুরুত্ব কেস সিনারিও -২</h6>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action border-0 mb-3">
+                                <div class="d-flex">
+                                    <img src="https://i.ibb.co.com/pj82055X/img1.png" class="thumbnail rounded me-3" style="width: 150px; height: auto;" alt="News thumbnail">
+                                    <div>
+                                        <div class="category-label">রাজনীতি</div>
+                                        <h6 class="mb-0">ভারতের যুদ্ধ প্রস্তুতি – একটি গুরুত্ব কেস সিনারিও -২</h6>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action border-0 mb-3">
+                                <div class="d-flex">
+                                    <img src="https://i.ibb.co.com/pj82055X/img1.png" class="thumbnail rounded me-3" style="width: 150px; height: auto;" alt="News thumbnail">
+                                    <div>
+                                        <div class="category-label">রাজনীতি</div>
+                                        <h6 class="mb-0">ভারতের যুদ্ধ প্রস্তুতি – একটি গুরুত্ব কেস সিনারিও -২</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+                
+            
     <!-- Cookie Banner -->
     <div class="cookie-banner">
         <div class="container">
