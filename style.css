@@ -4,7 +4,44 @@
  body {
      font-family: 'Hind Siliguri', sans-serif;
  }
- 
+ /* Notice Section Styles */
+ .notice-section {
+    background-color: #f05537; /* Same orange as the subscribe button */
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.notice-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.notice-text {
+    text-align: center;
+    margin: 0;
+    padding: 0 30px;
+}
+
+.notice-text strong {
+    font-weight: 600;
+}
+
+.notice-close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
  /* Header styles */
  .top-navbar {
      background-color: #222;
@@ -264,7 +301,80 @@
     max-height: calc(100vh - 40px); /* Adjust height based on screen */
     overflow-y: auto;
 }
+.footer-section {
+    background-color: #444444;
+    color: white;
+    padding: 30px 0;
+    position: absolute;
+    width: 100%; /* Ensures full viewport width */
+    margin: 0;
+    left: 0;
+}
+.container-fluid {
+    padding: 0; /* Removes Bootstrap's default padding */
+    margin: 0; /* Ensures no unwanted margin */
+    width: 100%; /* Full width */
+}
 
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.bengali-text {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.subscribe-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.subscribe-form input {
+    background-color: #222;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    height: 45px;
+}
+
+.subscribe-form input:focus {
+    background-color: #222;
+    color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.subscribe-btn {
+    background-color: #f05537;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    height: 45px;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.back-to-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
  @media (max-width: 768px) {
      .carousel-inner .carousel-item > div {
          display: none;
