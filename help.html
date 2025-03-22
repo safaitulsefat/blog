@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirajul.com</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Custom CSS -->
+    
+</head>
+<body>
+    <!-- Notice Section (Above Navbar) -->
+    <div class="notice-section">
+        <div class="container-fluid">
+            <div class="notice-content">
+                <p class="notice-text"><strong>বিশেষ ঘোষণা:</strong> আমাদের নতুন ওয়েবসাইট চালু হয়েছে! আজই দেখুন আমাদের নতুন সেবাসমূহ।</p>
+                <button class="notice-close" onclick="closeNotice()"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+<!-- Side Navigation -->
+<div id="mySidenav" class="side-navbar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="section-title">সেকশন</div>
+    <a href="./index.html">হোম</a>
+    <a href="#">পরিচয়</a>
+    <a href="#">সর্বশেষ</a>
+    <a href="./photograpy.html">ফটোগ্রাফি</a>
+    <a href="./tour.html">ভ্রমণ</a>
+    <a href="#">পরিসেবা</a>
+    <a href="#">যোগাযোগ</a>
+    <a href="#">আরও বিভাগ</a>
+    <a href="#">রাজনীতি</a>
+    <a href="#">গবেষণা</a>
+    <a href="#">মতামত</a>
+    <a href="#">প্রকৃতি ও সুরক্ষা</a>
+    <a href="#">মানবিক সমৃদ্ধি ও সম্পর্ক</a>
+    <a href="#">শিক্ষা</a>
+    <a href="#">পেশা</a>
+    <a href="#">খবর ও সাম্প্রতিক</a>
+</div>
+    
+    <!-- Top Navigation Bar -->
+    <nav class="navbar  top-navbar">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button" onclick="openNav()">
+                <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+            
+            
+            <img src="logo.svg"  alt="Sirajul.com" class="logo">
+            
+            <div class="d-flex align-items-center">
+                <span class="language-toggle me-2">EN</span>
+                <a href="#" class="icon-button"><i class="fas fa-sun"></i></a>
+                <a href="#" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-button"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon-button"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <div class="container">
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="./about.html" class="nav-link">পরিচয়</a>
+                <a href="./blog.html" class="nav-link">ব্লগ</a>
+                <a href="./tour.html" class="nav-link">ভ্রমণ</a>
+                <a href="./photograpy.html" class="nav-link">ফটোগ্রাফি</a>
+                <a href="#" class="nav-link">প্রবন্ধ</a>
+                <a href="./help.html" class="nav-link">সহায়তা</a>
+                <a href="#" class="nav-link">পরিসেবা</a>
+                <a href="./contact.html" class="nav-link">যোগাযোগ</a>
+            </div>
+        </div>
+    </div>
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="about-heading mt-4">সহায়তা</h1>
+        <p>এই পোর্টাল সম্পর্কে আপনার আগ্রহ এবং সমর্থনের জন্য ধন্যবাদ। এই প্ল্যাটফর্মটি এমন একটি প্রচেষ্টা যেখানে সত্যের অনুসন্ধান, বিশ্লেষণাত্মক চিন্তা, এবং জ্ঞান বিনিময়ের মাধ্যমে সমাজের জটিল প্রেক্ষাপটগুলো বোঝার চেষ্টা করা হয়। এই পোর্টালটির কাজের ধারাবাহিকতা এবং গুণগত মান বজায় রাখতে, আপনার সহায়তা অত্যন্ত গুরুত্বপূর্ণ।</p>
+        <p>কিভাবে সহায়তা করতে পারেন:</p>
+        <ul>
+            <li>
+                <h1>মতামত ও পরামর্শ</h1>
+                <p>আপনার মতামত ও পরামর্শ আমাদের জন্য অতি মূল্যবান। রাজনৈতিক বিশ্লেষণ, প্রযুক্তিগত চিন্তা, অথবা সামাজিক গবেষণা সম্পর্কিত যেকোনো পরামর্শ আমাদের কাজকে আরও সমৃদ্ধ করে।</p>
+            </li>
+            <li>
+                <h1>মতামত ও পরামর্শ</h1>
+                <p>আপনার মতামত ও পরামর্শ আমাদের জন্য অতি মূল্যবান। রাজনৈতিক বিশ্লেষণ, প্রযুক্তিগত চিন্তা, অথবা সামাজিক গবেষণা সম্পর্কিত যেকোনো পরামর্শ আমাদের কাজকে আরও সমৃদ্ধ করে।</p>
+            </li>
+            <li>
+                <h1>মতামত ও পরামর্শ</h1>
+                <p>আপনার মতামত ও পরামর্শ আমাদের জন্য অতি মূল্যবান। রাজনৈতিক বিশ্লেষণ, প্রযুক্তিগত চিন্তা, অথবা সামাজিক গবেষণা সম্পর্কিত যেকোনো পরামর্শ আমাদের কাজকে আরও সমৃদ্ধ করে।</p>
+            </li>
+        </ul>
+        <p class="contact">ইমেইল: <a href="mailto:care@sirajul.com">care@sirajul.com</a></p>
+    </div>
+    
+    <footer class="footer-section">
+        <div class="container-fluid text-center">
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            
+            <!-- Bengali Text -->
+            <div class="bengali-text">
+                বিশেষজ্ঞ যেখানে শেষ, অভিজ্ঞতা সেখানে শুরু, নতুনত্ব সেখানে লক্ষ্য।
+            </div>
+            
+            <!-- Subscribe Form -->
+            <div class="subscribe-form">
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="ইমেইল">
+                    <button class="subscribe-btn" type="button">সাবস্ক্রাইব</button>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="copyright">
+                <a href="" style="color: #fd5102;;">© sirajul.com</a> কর্তৃক সর্বস্বত্ব সংরক্ষিত।
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+    </footer>
+    
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cookie banner close functionality
+        document.querySelector('.cookie-banner button').addEventListener('click', function() {
+            document.querySelector('.cookie-banner').style.display = 'none';
+        });
+        
+        // Side navbar functionality
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        
+        // Sidebar tabs functionality
+        function changeTab(tabId) {
+            // Hide all content
+            document.getElementById('nirbachito-content').style.display = 'none';
+            document.getElementById('pothito-content').style.display = 'none';
+            
+            // Show selected content
+            document.getElementById(tabId + '-content').style.display = 'block';
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.sidebar-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            if (tabId === 'nirbachito') {
+                tabs[0].classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+            }
+        }
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "280px";
+            document.getElementById("overlay").style.display = "block";
+            document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("overlay").style.display = "none";
+            document.body.style.overflow = ""; // Restore scrolling
+        }
+        $('#recipeCarousel').carousel({
+            interval: 10000
+          })
+          
+          $('.carousel .carousel-item').each(function(){
+              var minPerSlide = 3;
+              var next = $(this).next();
+              if (!next.length) {
+              next = $(this).siblings(':first');
+              }
+              next.children(':first-child').clone().appendTo($(this));
+              
+              for (var i=0;i<minPerSlide;i++) {
+                  next=next.next();
+                  if (!next.length) {
+                      next = $(this).siblings(':first');
+                    }
+                  
+                  next.children(':first-child').clone().appendTo($(this));
+                }
+          });
+          
+            function closeNotice() {
+                document.querySelector('.notice-section').style.display = 'none';
+            }
+        
+        
+          
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
