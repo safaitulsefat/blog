@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirajul.com</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Custom CSS -->
+    
+</head>
+<body>
+    <!-- Notice Section (Above Navbar) -->
+    <div class="notice-section">
+        <div class="container-fluid">
+            <div class="notice-content">
+                <p class="notice-text"><strong>বিশেষ ঘোষণা:</strong> আমাদের নতুন ওয়েবসাইট চালু হয়েছে! আজই দেখুন আমাদের নতুন সেবাসমূহ।</p>
+                <button class="notice-close" onclick="closeNotice()"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+
+<!-- Side Navigation -->
+<div id="mySidenav" class="side-navbar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="section-title">সেকশন</div>
+    <a href="./index.html">হোম</a>
+    <a href="./about.html">পরিচয়</a>
+    <a href="#">সর্বশেষ</a>
+    <a href="./photograpy.html">ফটোগ্রাফি</a>
+    <a href="./tour.html">ভ্রমণ</a>
+    <a href="#">পরিসেবা</a>
+    <a href="./help.html">যোগাযোগ</a>
+    <a href="#">আরও বিভাগ</a>
+    <a href="#">রাজনীতি</a>
+    <a href="#">গবেষণা</a>
+    <a href="#">মতামত</a>
+    <a href="#">প্রকৃতি ও সুরক্ষা</a>
+    <a href="#">মানবিক সমৃদ্ধি ও সম্পর্ক</a>
+    <a href="#">শিক্ষা</a>
+    <a href="#">পেশা</a>
+    <a href="#">খবর ও সাম্প্রতিক</a>
+</div>
+    
+    <!-- Top Navigation Bar -->
+    <nav class="navbar  top-navbar">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button" onclick="openNav()">
+                <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+            
+            
+            <img src="logo.svg"  alt="Sirajul.com" class="logo">
+            
+            <div class="d-flex align-items-center">
+                <span class="language-toggle me-2">EN</span>
+                <a href="#" class="icon-button"><i class="fas fa-sun"></i></a>
+                <a href="#" class="icon-button"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon-button"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="icon-button"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <div class="container">
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="./about.html" class="nav-link">পরিচয়</a>
+                <a href="./blog.html" class="nav-link">ব্লগ</a>
+                <a href="./tour.html" class="nav-link">ভ্রমণ</a>
+                <a href="./photograpy.html" class="nav-link">ফটোগ্রাফি</a>
+                <a href="#" class="nav-link">প্রবন্ধ</a>
+                <a href="./help.html" class="nav-link">সহায়তা</a>
+                <a href="#" class="nav-link">পরিসেবা</a>
+                <a href="./help.html" class="nav-link">যোগাযোগ</a>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content Area -->
+    <div class="container mt-3">
+        <div class="row">
+            <!-- Left Sidebar -->
+            <div class="col-md-3" >
+                <div class="section-title">আরও পড়ুন</div>
+                
+                <div class="news-item">
+                    <div class="category-label">রাজনীতি</div>
+                    <h5><a href="#" class="text-dark text-decoration-none">ভারতীয়তির ভাঙাটে সেনাদেরসঙ্গিনি</a></h5>
+                </div>
+                
+                <div class="news-item">
+                    <div class="category-label">রাজনীতি</div>
+                    <h5><a href="#" class="text-dark text-decoration-none">ছাত্রদের সাথে সেনাবাহিনীর বিরোধ</a></h5>
+                </div>
+                
+                <div class="news-item">
+                    <div class="category-label">রাজনীতি</div>
+                    <h5><a href="#" class="text-dark text-decoration-none">ইউনুস সম্পর্কে শেখ হাসিনার সতর্কতা</a></h5>
+                </div>
+                
+                <div class="news-item">
+                    <div class="category-label">রাজনীতি</div>
+                    <h5><a href="#" class="text-dark text-decoration-none">মুক্তিযুদ্ধ ওইই আমাদের ন্যারেটিভ -৪</a></h5>
+                </div>
+                
+                <div class="news-item">
+                    <div class="category-label">রাজনীতি</div>
+                    <h5><a href="#" class="text-dark text-decoration-none">মুক্তিযুদ্ধ ওইই আমাদের ন্যারেটিভ -৩</a></h5>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="col-md-6">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="date-label">২৪ মার্চ ২০২৫</div>
+                    <div class="category-label">রাজনীতি</div>
+                </div>
+                
+                <div class="sub-headline">পরিবর্তিত আমেরিকার চাপে</div>
+                
+                <h1 class="main-headline">গাজওয়াতুল হিন্দ এখন গাজওয়াতুল বরবাদ</h1>
+                
+                <div class="main-image mt-3 mb-4">
+                    <img src="https://i.ibb.co.com/pj82055X/img1.png" class="img-fluid" alt="News Collage">
+                </div>
+                
+                <div class="author-info d-flex align-items-center mb-3">
+                    <div class="author-icon me-2">
+                        <img src="https://i.ibb.co.com/pj82055X/img1.png" height="50px" class="rounded-circle" alt="Author">
+                    </div>
+                    <div class="author-name">সিরাজুল হোসেন</div>
+                    
+                </div>
+                <p>বাংলাদেশের স্বাধীনতার সুবর্ণ জয়ন্তীতে আমন্ত্রিত ভারতের প্রধানমন্ত্রী নরেন্দ্র মোদীর বাংলাদেশ সফরের বিরোধিতায় সরব ছিল মাদ্রাসার নামে কিশোর তরুণদের মধ্যে অহিংস চরমপন্থার (ননভায়েলেন্ট এক্সট্রিমিজমের) বীজ বপনকারী সংগঠন হেফাজতে ইসলামী বাংলাদেশ। অহিংস চরমপন্থা হচ্ছে সহিংস চরমপন্থা (ভায়োলেন্ট এক্সট্রিমিজম) যে পরিবেশ পরিস্থিতিতে চর্চা অসম্ভব, পুলিশি তৎপরতা অথবা অন্য কেন প্রতিরোধের কারণে, সেখানে আইনের ভেতর থেকেই কোন দেশ, জাতী, সংস্কৃতি বা ধর্মের বিরুদ্ধে ক্রমান্বয়ে ঘৃণা, বিরোধীতা ও উন্মাদনা তৈরী করা যাতে যে কোন উপলক্ষ্যে সেই উন্মাদনাকে মূহুর্তেই রাজনৈতিক শক্তিতে রূপদান করে অরাজকতা তৈরী করা যায় ও রাজনৈতিক পট পরিবর্তন করে ফেলা যায়। 
+
+                    “২০১০ এর ১৯ জানুয়ারিতে, এই সংগঠনটি চট্টগ্রামের প্রায় একশোটি কওমি মাদ্রাসার শিক্ষকদের নিয়ে গঠিত হয়। ২০০৯ তে আওযামী লীগ ক্ষমতা গ্রহণের পরপরই ২০১০ সালে এটি বাংলাদেশের ধর্মনিরপেক্ষ শিক্ষানীতির বিরোধিতার মধ্য দিয়ে আত্মপ্রকাশ করে। ২০১১ সালে তারা বাংলাদেশ নারী উন্নয়ন নীতি (২০০৯) এর কয়েকটি ধারাকে ইসলামের সাথে সাংঘর্ষিক দাবি করে এর তীব্র বিরোধিতা করে” [উইকিপিডিয়া]।  </p>
+                    <p>মোদির সফরের বিরুদ্ধে তাদের বক্তব্য ছিল, “স্বাধীনতার সুবর্ণজয়ন্তী ও মুজিববর্ষ উদযাপনে এমন কাউকে বাংলাদেশে নিয়ে আসা উচিত হবে না, যাকে এদেশের মানুষ চায় না বা যার আগমন এদেশের মানুষকে আহত করবে। কারণ নরেন্দ্র মোদী একজন মুসলিম বিদ্বেষী হিসাবে সারা বিশ্বে পরিচিত।”
+
+                        মোদির সফরের দিনে বেলা সোয়া ২টার দিকে হাটহাজারী বড় মাদ্রাসা থেকে কয়েক হাজার হেফাজতকর্মী মিছিল নিয়ে বের হয়। লাঠিসোঁটা নিয়ে তারা হাটহাজারী থানা, ইউনিয়ন ভূমি অফিস ও ডাক বাংলোতে হামলা চালায়। ঢাকায় বায়তুল মোকাররম মসজিদেও ইট পাটকেল নিক্ষেপ ও পুলিশের সাথে সংঘর্ষ হয়। 
+                        
+                        হাটহাজারীতে উপোরোক্ত সংঘর্ষের ফলস্রুতিতে কয়েকজন মাদ্রাসা ছাত্র নিহত হয় এবং পরবর্তী দু তিন দিনের সহিংস বিক্ষোভে ব্রাহ্মণবাড়িয়া ও চট্টগ্রামের হাটহাজারীতে অন্তত ১৪ জন নিহত হয়। এর মধ্যে ব্রাহ্মণবাড়িয়ায় ১০ জন এবং হাটহাজারীতে ৪ জন মারা গেছে। 
+                        
+                        কওমি মাদ্রাসার শিক্ষকদের ইসলামের সাথে সাংঘর্ষিক বিষয় নিয়ে প্রতিবাদী হওয়া যুক্তি সঙ্গত এবং এটা তাদের গণতান্ত্রিক অধিকার। যে কারণে ভারতের প্রধানমন্ত্রীর আগমন যেটা স্বাধীনতার যে সুবর্ণ জয়ন্তী সেই স্বাধীনতার যুদ্ধে পাকিস্তানিরা হত্যা করেছে ২০ থেকে ২৫ লাখ বাঙালী মুসলিম। ভারত সহায়তা করেছে এই মুসলিম নিধনকারীদের বিরুদ্ধে বিজয়ে যারা নিজেদের উচ্চতর মুসলিম মনে করত এবং বাংলাদেশের স্বাধীনতা যুদ্ধকে তারা মনে করত এটা তাদের জন্য ইসলাম রক্ষার জন্য ধর্মযুদ্ধ। রঙে 'কালো ও আকৃতিতে ছোট' বাঙালীদের তারা মনে করত নিম্ন স্তরের মুসলমান।
+                        
+                        এই ঘটনার ত্রিশ বছর পর থেকে যদি মুসলিমদের কেউ শত্রু হয়ে থাকে তাহলে সেটা জর্জ সোরোস প্রভাবিত আমেরিকার ডিপ স্টেট। পিতা বুশ, পুত্র বুশ ও ওবামা এরা হত্য করেছে আরও অন্তত ২৫ লাখ এশিয় মুসলমান সন্ত্রাসের বিরুদ্ধে যুদ্ধের নামে। ধ্বংস করেছে আফগানিস্তান, ইরাক, সিরিয়া, চীরতরে নষ্ট করেছে এইসব প্রাচীন ইসলামী সভ্যতার জনপদ ও সংস্কৃতি।
+                        
+                        শুধু এটুকুতেই থেমে নেই, সন্ত্রাসবিরোধীতার নামে ইসলামোফোবিয়ার বীজ তারা বপন করে চলেছে সারা দুনিয়ায় গত বিশ বছর ব্যাপী। এই কাজে পাকিস্তান তাদের দোসর। সেই ১৯৮০ সাল থেকে প্রতি বছর তারা পেয়ে আসছে দুই থেকে চার বিলিয়ন ডলারের অর্থ ও সামরিক সাহায্য। যার একটা বড় অংশ ব্যয় হয় আফগানিস্তানে নিরস্ত্র নিরপরাধী  মুসলিম নিধনে।
+                        
+                        গত পঞ্চাশ বছরে সত্যিকারে যারা মুসলিম নিধনে রত তারা হল আমেরিকার ডিপ স্টেট ও তাদের সহযোগী পাকিস্তানের মত মির্জাফর রাষ্ট্রগুলো যারা মুসলিম নিধনে সহযোগীতা করে অর্থ ও সমরাস্ত্র আয় করে। এর পেছনের শক্তি হল পাকিস্তানের সামরিক বাহিনী যারা এই আমেরিকান টাকার আইনি বেআইিনি সর্বোচ্চো ভাগীদার। আমেরিকায় প্রথম টার্মে ট্রাম্প সরকারে আসার পর এই অর্থ সহযোগীতা বন্ধের আদেশ দিলে অর্থ সঙ্কটে পড়ে পাকিস্তান এবং সৌদি আরব এগিয়ে আসে তাদের লালবাতি জ্বলা থেকে বাঁচাতে।
+                        
+                        ইসলামের বিরুদ্ধে নিজেদের এই মির্জাফরি ও হঠকারিতা থেকে রেহাই পেতে পাকিস্তানীরা কল্পনার শত্রু তৈরি করে সেই ডিপ স্টেট আমেরিকানদের মতই। আমেরিকানদের যেমন একসময় কম্যুনিস্টরা ছিল কল্পনার শত্রু, এর পর হয়েছে মুসলমানেরা। পাকিস্তানের তেমনই কল্পনার শত্রু হচ্ছে ভারত এবং হিন্দুরা। এবং এই শত্রু তৈরী করতে তারা কোরআনের ভ্রান্ত অনুবাদ সহ নানা রকম ভুয়া হাদিসের নসিহত নিজেদের মত ব্যাখ্যা করে ভারত ও হিন্দুদের কল্পনার শত্রু বানায় যাতে প্রকৃত শত্রুরা তরুণ সমাজের নজরের বাইরে থাকে ও তারা মির্জাফরি চালিয়ে যেতে পারে। ভারতের অনেক মৌলবাদী মাওলানারাও এতে যোগ দেয় এই খোয়াবে যে একদিন পুরো ভারত আবার ইসলাম শাসিত হবে। 
+                        
+                        বছর কয়েক আগে এক ডিসেম্বরে, বড়দিনে ভাইরাল হওয়া এক ভিডিওতে দেখা যাচ্ছে পাকিস্তানের সামা টিভিতে এক সাক্ষাৎকারে পাকিস্তানের বিশ্বসেরা ক্রিকেটার শোয়েব আখতার বলছেন, “আমাদের ধর্মগ্রন্থে লেখা রয়েছে গাজা-এ-হিন্দ (গাজওয়াতুল হিন্দ) ঘটবে। এবং অ্যাটকে নদীর (সিন্ধু নদী) জল দুবার রক্তে লাল হয়ে যাবে। তারপর একাধিক শক্তির আবির্ভাব ঘটবে- শামাল মাসরিক, আফগানিস্তান থেকে সৈনিকরা অ্যাটকে পৌঁছবে। উজবেকিস্তান ও আরব থেকেও সেনারা আসবে। মুসলিমরা কাশ্মীর দখল করবে আগে। তারপর আক্রমণ করবে ভারতে।”</p>
+            
+                  <!-- Tags Section -->
+                <div class="tags-section mt-4 mb-4">
+                    <div class="fw-bold mb-2">বিষয়:</div>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">দক্ষিণ এশিয়ার রাজনীতি</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">ধর্মনিরপেক্ষতা</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">ধর্ম ও রাজনীতি</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">মুক্তিযুদ্ধ</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">ভারতনীতি</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">পাকিস্তান</a>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2 mt-2">
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">বাংলাদেশ</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">ভারত</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">ভারত বিশ্ব</a>
+                        <a href="#" class="btn btn-light btn-sm rounded-pill">বিশ্ব রাজনীতি</a>
+                    </div>
+                </div>
+                <!-- Comments Section -->
+                <div class="comments-section mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="section-title">মন্তব্য <span class="bg-warning px-2 py-1 rounded"></span></div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>0 comments</div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2">Sort by</span>
+                            <div class="dropdown">
+                                <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Oldest
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+                                    <li><a class="dropdown-item" href="#">Newest</a></li>
+                                    <li><a class="dropdown-item active" href="#">Oldest</a></li>
+                                    <li><a class="dropdown-item" href="#">Most Liked</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comment-form mt-4">
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <img src="https://via.placeholder.com/50" class="rounded-circle" alt="User">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="form-floating mb-2">
+                                    <textarea class="form-control" placeholder="Add a comment..." id="commentText" style="height: 100px; color:black; border:1px solid black;"></textarea>
+                                    <label for="commentText">Add a comment...</label>
+                                </div>
+                                <div class="text-end">
+                                    <button class="btn btn-primary">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="mt-4">
+                        <p><i class="bi bi-facebook"></i> Facebook Comments Plugin</p>
+                    </div>
+                </div>
+            
+                    </div>
+            
+            <!-- Right Sidebar -->
+            <!-- Right Sidebar -->
+            <div class="col-lg-3">
+                <!-- Ad Section -->
+                <div class="ad-section">
+                    <img src="/placeholder.svg?height=150&width=200" alt="Mobile with apps">
+                   
+                    <h3>ADVERTISE WITH US</h3>
+                    <div class="email">care@sirajul.com</div>
+                </div>
+                
+                <!-- Sidebar News -->
+                <div class="sidebar-content">
+                    <div class="d-flex justify-content-between sidebar-title">
+                        <button class="sidebar-tab active" onclick="changeTab('nirbachito')">নির্বাচিত</button>
+                        <button class="sidebar-tab" onclick="changeTab('pothito')">পঠিত</button>
+                    </div>
+                    
+                    <div id="nirbachito-content">
+                        <div class="sidebar-news">
+                            <img src="https://i.ibb.co.com/pj82055X/img1.png" alt="img1" border="0">
+                            <div class="sidebar-news-title">সব ক্রোধ ও সরকার পতনের মনোবিদ্যা</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">পাকিস্তানে মুজিব ভিত্তি</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Map">
+                            <div class="sidebar-news-title">আমেরিকার যাত্র - ১: ইরান-পাকিস্তান-ভারত (IPI) গ্যাস পাইপলাইন</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">বাংলাদেশে ৭৫</div>
+                        </div>
+                    </div>
+                    
+                    <div id="pothito-content" style="display: none;">
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">বাংলাদেশে ৭৫</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Map">
+                            <div class="sidebar-news-title">আমেরিকার যাত্র - ১: ইরান-পাকিস্তান-ভারত (IPI) গ্যাস পাইপলাইন</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="People">
+                            <div class="sidebar-news-title">পাকিস্তানে মুজিব ভিত্তি</div>
+                        </div>
+                        
+                        <div class="sidebar-news">
+                            <img src="/placeholder.svg?height=60&width=80" alt="Map">
+                            <div class="sidebar-news-title">সব ক্রোধ ও সরকার পতনের মনোবিদ্যা</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Cookie Banner -->
+<div class="cookie-banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-9">
+                আমরা আপনাকে সেবা উন্নত করতে কুকি ব্যবহার করি। আমাদের কুকি নীতির পর্যালোচনা জানার জন্য অনুগ্রহ করে <a href="#" style="color: #ff5722;">এখানে</a> ক্লিক করুন। কুকি ব্যবহারের জন্য আপনি সম্মত হলে, 'সম্মতি দিন' বাটনে ক্লিক করুন।
+            </div>
+            <div class="col-md-3 text-end">
+                <button class="btn">সম্মতি দিন</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer-section">
+    <div class="container-fluid text-center">
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+        <!-- Bengali Text -->
+        <div class="bengali-text">
+            বিশেষজ্ঞ যেখানে শেষ, অভিজ্ঞতা সেখানে শুরু, নতুনত্ব সেখানে লক্ষ্য।
+        </div>
+        
+        <!-- Subscribe Form -->
+        <div class="subscribe-form">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="ইমেইল">
+                <button class="subscribe-btn" type="button">সাবস্ক্রাইব</button>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="copyright">
+            <a href="" style="color: #fd5102;;">© sirajul.com</a> কর্তৃক সর্বস্বত্ব সংরক্ষিত।
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Cookie banner close functionality
+    document.querySelector('.cookie-banner button').addEventListener('click', function() {
+        document.querySelector('.cookie-banner').style.display = 'none';
+    });
+    
+    // Side navbar functionality
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    
+    // Sidebar tabs functionality
+    function changeTab(tabId) {
+        // Hide all content
+        document.getElementById('nirbachito-content').style.display = 'none';
+        document.getElementById('pothito-content').style.display = 'none';
+        
+        // Show selected content
+        document.getElementById(tabId + '-content').style.display = 'block';
+        
+        // Update active tab
+        const tabs = document.querySelectorAll('.sidebar-tab');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        
+        if (tabId === 'nirbachito') {
+            tabs[0].classList.add('active');
+        } else {
+            tabs[1].classList.add('active');
+        }
+    }
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "280px";
+        document.getElementById("overlay").style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("overlay").style.display = "none";
+        document.body.style.overflow = ""; // Restore scrolling
+    }
+    $('#recipeCarousel').carousel({
+        interval: 10000
+      })
+      
+      $('.carousel .carousel-item').each(function(){
+          var minPerSlide = 3;
+          var next = $(this).next();
+          if (!next.length) {
+          next = $(this).siblings(':first');
+          }
+          next.children(':first-child').clone().appendTo($(this));
+          
+          for (var i=0;i<minPerSlide;i++) {
+              next=next.next();
+              if (!next.length) {
+                  next = $(this).siblings(':first');
+                }
+              
+              next.children(':first-child').clone().appendTo($(this));
+            }
+      });
+      
+        function closeNotice() {
+            document.querySelector('.notice-section').style.display = 'none';
+        }
+    
+    
+      
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+    
